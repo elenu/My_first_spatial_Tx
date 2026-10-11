@@ -28,7 +28,7 @@ Datasets used by the authors of the study:
 | GSE179640 | scRNA-seq | Ectopic, eutopic, and healthy endometrium (Tan et al.) |
 | GSM6690475 / GSM6690476 | Visium ST | Ectopic endometriosis lesion tissue sections |
 
-## Workflow
+## Workflow of updated scripts
 
 ### Single-cell data processing
 - `00_spatial_data_collection.ipynb` — collection/preparation of spatial data.
@@ -59,3 +59,5 @@ I encourage other scientists to use it because the analysis of samples associate
 ## Notes
 
 The notebooks in `scr/` are intended to be run in sequence, with each stage building on the results of the previous one.
+
+Most of my updates were associated to kernel and module loading, but also simplified workload reducing PCA components from 50 to 30.
