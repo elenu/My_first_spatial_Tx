@@ -37,7 +37,7 @@ Datasets used by the original study authors:
 - `03_sc_integration.ipynb` — Integration of single-cell datasets
 - `04_sc_clustering.ipynb` — Clustering of single-cell data
 - `05_sc_immune_annotation.ipynb` — Immune cell annotation
-- `05_sc_immune_annotation_test.ipynb` — Immune cell annotation with extended analysis on Eosinophils
+- `05_sc_immune_annotation_test.ipynb` — Immune cell annotation with extended analysis on EGCs
 - `06_sc_immunosenescence.ipynb` — Analysis of immunosenescence in single-cell data
 
 ### Spatial analysis
@@ -64,11 +64,11 @@ This analysis confirms the reproducibility and utility of the original pipeline.
 
 **Important Finding**: During immune cell annotation, I observed that classical Entero Glia Cell (EGC) biomarkers showed limited discriminative power for this cell population. Specifically:
 
-- EGC biomarkers were not clearly associated with the eosinophil cluster
+- EGC biomarkers were not clearly associated with the EGC cluster
 
 - Expression levels of characteristic EGC markers were lower than expected based on literature
 
-- This suggests potential limitations in using classical EGC markers for eosinophil identification in endometriotic tissue
+- This suggests potential limitations in using classical EGC markers for EGC identification in endometriotic tissue
 
 This observation highlights the importance of validating canonical biomarkers in disease-specific contexts and may warrant further investigation into alternative or additional markers for eosinophil annotation in endometriosis samples.
 
