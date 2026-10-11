@@ -10,7 +10,7 @@ Omics and bioinformatics are revolutionizing endometriosis research. Genomic stu
 
 The approach of the project taken as a reference is studying spatinal transcriptomics, since despite its prevalence, the immune landscape of endometriotic lesions remains poorly characterized at single-cell resolution. The project taken as reference (<https://github.com/taimcnugget/endo-immune-atlas>) integrates scRNA-seq and spatial transcriptomics to map immune cell states, with a focused analysis on immunosenescence  the acquisition of a senescent phenotype by immune cells  within ectopic, eutopic, and healthy endometrial tissue.
 
-My aim has been to adapt the project's code reproduce the results prublished in the authors' publication, a reproducible Snakemake pipeline for spatial immune and immunosenescence profiling in endometriosis using public single-cell and spatial transcriptomics data: <https://github.com/taimcnugget/endo-immune-atlas>.
+My aim has been to adapt the project's code reproduce the results prublished in the authors' publication, a reproducible Snakemake pipeline for spatial immune and immunosenescence profiling in endometriosis using public single-cell and spatial transcriptomics data: <https://github.com/taimcnugget/endo-immune-atlas>. I have also explored different gene lists as alternative to observe potential value to new insights (not shown).
 
 I organized script in this repo as a step-by-step workflow in the `scr/` folder, moving from data collection to downstream spatial interpretation, following the flowstream of the authors of the study to answer biological questions:
 
@@ -37,6 +37,7 @@ Datasets used by the authors of the study:
 - `03_sc_integration.ipynb` — integration of single-cell datasets.
 - `04_sc_clustering.ipynb` — clustering of single-cell data.
 - `05_sc_immune_annotation.ipynb` — immune cell annotation.
+- `05_sc_immune_annotation_test.ipynb` — immune cell annotation with my contribution on EGCs.
 - `06_sc_immunosenescence.ipynb` — analysis of immunosenescence in single-cell data.
 
 ### Spatial analysis
@@ -49,9 +50,9 @@ Datasets used by the authors of the study:
 ### Cell-cell communication
 - `11_sc_ccc.ipynb` — cell-cell communication analysis in the single-cell data.
 
-## Conclusion
+## Conclusion and key findings
 
-Here I confirm code is reproducible and useful. I have observed we can customice biomarkers lists and explore more gene sets of different immune annotations.
+Here I confirm code is reproducible and useful. I have observed we can customice biomarkers lists and explore more gene sets of different immune annotations or cell-cell communication. I also tested known associated biomarkers such as Entero Glia Cells biomarkers, which are expected to be elevated in endometriosis (<https://doi.org/10.1186/s12905-024-03480-7>).
 
 I encourage other scientists to use it because the analysis of samples associated to endometriosis will allow to leverage these insights to accelerate the development of new therapeutics, improve diagnostics, and promote more precise and effective care for women affected by endometriosis. 
 
