@@ -37,7 +37,6 @@ Datasets used by the original study authors:
 - `03_sc_integration.ipynb` — Integration of single-cell datasets
 - `04_sc_clustering.ipynb` — Clustering of single-cell data
 - `05_sc_immune_annotation.ipynb` — Immune cell annotation
-- `05_sc_immune_annotation_test.ipynb` — Immune cell annotation with extended analysis on EGCs
 - `06_sc_immunosenescence.ipynb` — Analysis of immunosenescence in single-cell data
 
 ### Spatial analysis
@@ -90,7 +89,7 @@ I encourage other scientists to use and adapt this pipeline, and to contribute a
 
 ## Technical Notes
 
-- All notebooks, except the one associated to my contribution (`04_sc_clustering_test.ipynb`), in `scr/` are intended to be run sequentially, with each stage building on the results of the previous one. 
+- All notebooks, except the one associated to my contribution (`04_sc_clustering_test.ipynb` and `05_sc_immune_annotation_test.ipynb`), in `scr/` are intended to be run sequentially, with each stage building on the results of the previous one. 
 
 - Python environment and dependencies are specified in the project configuration
 
