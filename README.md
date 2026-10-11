@@ -4,15 +4,15 @@ This repository documents my first attempt at spatial transcriptomics analysis b
 
 ## Overview
 
-Endometriosis affects approximately 1 in 10 women of reproductive age and is a chronic, inflammatory disease characterized by the growth of endometrial-like tissue outside the uterus, leading to pain, infertility, and significant reduction in quality of life. From a Biopharma standpoint, addressing endometriosis is challenging due to its heterogeneous symptoms, variable response to treatment, and incomplete understanding of underlying mechanisms. Innovative companies are focused on developing novel medical therapies that go beyond traditional hormonal and anti-inflammatory drugs. These efforts include the discovery of compounds targeting key inflammatory pathways, immune responses, and angiogenesis processes implicated in lesion growth and maintenance. Clinical development programs increasingly integrate patient-reported outcomes to capture the full scope of disease burden and guide personalized therapy. 
+Endometriosis affects approximately 1 in 10 women of reproductive age and is a chronic, inflammatory disease characterized by the growth of endometrial-like tissue outside the uterus, leading to pain and infertility. Despite its prevalence, the immune landscape of endometriotic lesions remains poorly characterized at the single-cell and spatial level.
 
-Omics and bioinformatics are revolutionizing endometriosis research. Genomic studies help identify susceptibility loci and genetic variants linked to disease onset, progression, and drug response. Transcriptomic and proteomic analyses reveal dysregulated signaling pathways and molecular signatures differentiating endometriosis lesions from healthy tissue, illuminating novel therapeutic targets and mechanisms of resistance. Integration of multi-omics data with advanced bioinformatics allows for the stratification of patient populations, the discovery of non-invasive diagnostic biomarkers, and the tailoring of treatment regimens to individual profiles. 
+Omics and bioinformatics are revolutionizing endometriosis research. Genomic studies help identify susceptibility loci and genetic variants linked to disease onset, progression, and drug response. Transcriptomic approaches, particularly single-cell and spatial transcriptomics, enable high-resolution characterization of cell states and tissue organization in endometrial tissues.
 
-The approach of the project taken as a reference is studying spatinal transcriptomics, since despite its prevalence, the immune landscape of endometriotic lesions remains poorly characterized at single-cell resolution. The project taken as reference (<https://github.com/taimcnugget/endo-immune-atlas>) integrates scRNA-seq and spatial transcriptomics to map immune cell states, with a focused analysis on immunosenescence  the acquisition of a senescent phenotype by immune cells  within ectopic, eutopic, and healthy endometrial tissue.
+This project takes a spatial transcriptomics approach to study the immune microenvironment of endometriotic lesions. The analysis is based on a reproducible Snakemake pipeline for spatial immune and immunosenescence profiling in endometriosis, adapted from the original published study.
 
-My aim has been to adapt the project's code reproduce the results prublished in the authors' publication, a reproducible Snakemake pipeline for spatial immune and immunosenescence profiling in endometriosis using public single-cell and spatial transcriptomics data: <https://github.com/taimcnugget/endo-immune-atlas>. I have also explored different gene lists as alternative to observe potential value to new insights (not shown).
+The scripts in this repository are organized as a step-by-step workflow in the `scr/` folder, progressing from data collection to downstream spatial interpretation, following the methodology of the original study authors.
 
-I organized script in this repo as a step-by-step workflow in the `scr/` folder, moving from data collection to downstream spatial interpretation, following the flowstream of the authors of the study to answer biological questions:
+### Research Questions
 
 1. How do immune cell states differ across ectopic, eutopic, and healthy endometrium?
 2. Are immunosenescent populations enriched in endometriotic lesions?
@@ -21,43 +21,83 @@ I organized script in this repo as a step-by-step workflow in the `scr/` folder,
 
 ## Data
 
-Datasets used by the authors of the study:
+Datasets used by the original study authors:
 
 | Accession | Type | Description |
 |---|---|---|
 | GSE179640 | scRNA-seq | Ectopic, eutopic, and healthy endometrium (Tan et al.) |
 | GSM6690475 / GSM6690476 | Visium ST | Ectopic endometriosis lesion tissue sections |
 
-## Workflow of updated scripts
+## Workflow
 
 ### Single-cell data processing
-- `00_spatial_data_collection.ipynb` — collection/preparation of spatial data.
-- `01_sc_data_collection.ipynb` — collection/preparation of single-cell data.
-- `02_sc_quality_control.ipynb` — single-cell quality control.
-- `03_sc_integration.ipynb` — integration of single-cell datasets.
-- `04_sc_clustering.ipynb` — clustering of single-cell data.
-- `05_sc_immune_annotation.ipynb` — immune cell annotation.
-- `05_sc_immune_annotation_test.ipynb` — immune cell annotation with my contribution on EGCs.
-- `06_sc_immunosenescence.ipynb` — analysis of immunosenescence in single-cell data.
+- `00_spatial_data_collection.ipynb` — Collection and preparation of spatial data
+- `01_sc_data_collection.ipynb` — Collection and preparation of single-cell data
+- `02_sc_quality_control.ipynb` — Single-cell quality control
+- `03_sc_integration.ipynb` — Integration of single-cell datasets
+- `04_sc_clustering.ipynb` — Clustering of single-cell data
+- `05_sc_immune_annotation.ipynb` — Immune cell annotation
+- `05_sc_immune_annotation_test.ipynb` — Immune cell annotation with extended analysis on Eosinophils
+- `06_sc_immunosenescence.ipynb` — Analysis of immunosenescence in single-cell data
 
 ### Spatial analysis
-- `07_spatial_cell2location.ipynb` — cell2location-based mapping of cell types into spatial data.
-- `08_spatial_immune_architecture.ipynb` — analysis of spatial immune architecture.
-- `09_spatial_immunosenescence.ipynb` — spatial analysis of immunosenescence signatures.
-- `10_spatial_niche_discovery.ipynb` — discovery of spatial niches.
-- `12_spatial_niche_ccc.ipynb` — cell-cell communication analysis in spatial niches.
+- `07_spatial_cell2location.ipynb` — Cell2location-based mapping of cell types into spatial data
+- `08_spatial_immune_architecture.ipynb` — Analysis of spatial immune architecture
+- `09_spatial_immunosenescence.ipynb` — Spatial analysis of immunosenescence signatures
+- `10_spatial_niche_discovery.ipynb` — Discovery and characterization of spatial niches
+- `12_spatial_niche_ccc.ipynb` — Cell-cell communication analysis in spatial niches
 
 ### Cell-cell communication
-- `11_sc_ccc.ipynb` — cell-cell communication analysis in the single-cell data.
+- `11_sc_ccc.ipynb` — Cell-cell communication analysis in single-cell data
 
-## Conclusion and key findings
+## Key Findings and Contributions
 
-Here I confirm code is reproducible and useful. I have observed we can customice biomarkers lists and explore more gene sets of different immune annotations or cell-cell communication. I also tested known associated biomarkers such as Entero Glia Cells biomarkers, which are expected to be elevated in endometriosis (<https://doi.org/10.1186/s12905-024-03480-7>).
+### Workflow Reproducibility
 
-I encourage other scientists to use it because the analysis of samples associated to endometriosis will allow to leverage these insights to accelerate the development of new therapeutics, improve diagnostics, and promote more precise and effective care for women affected by endometriosis. 
+This analysis confirms the reproducibility and utility of the original pipeline. The code has been adapted and simplified while maintaining scientific rigor, including:
 
-## Notes
+- Streamlined kernel and module loading
 
-The notebooks in `scr/` are intended to be run in sequence, with each stage building on the results of the previous one.
+- Optimized PCA components (reduced from 50 to 30) without loss of biological signal
 
-Most of my updates were associated to kernel and module loading, but also simplified workload reducing PCA components from 50 to 30.
+### Observations on EGCs Biomarkers
+
+**Important Finding**: During immune cell annotation, I observed that classical Entero Glia Cell (EGC) biomarkers showed limited discriminative power for this cell population. Specifically:
+
+- EGC biomarkers were not clearly associated with the eosinophil cluster
+
+- Expression levels of characteristic EGC markers were lower than expected based on literature
+
+- This suggests potential limitations in using classical EGC markers for eosinophil identification in endometriotic tissue
+
+This observation highlights the importance of validating canonical biomarkers in disease-specific contexts and may warrant further investigation into alternative or additional markers for eosinophil annotation in endometriosis samples.
+
+### Opportunities for Extension
+
+The codebase is flexible and allows for:
+
+- Customization of biomarker lists for different cell types
+
+- Exploration of alternative gene sets for immune annotation
+
+- Extended cell-cell communication analyses with different interaction databases
+
+## Conclusion
+
+This reproducible workflow demonstrates the applicability of spatial transcriptomics and immunosenescence profiling to endometriosis research. Analysis of endometriosis samples using this pipeline can provide insights to accelerate the development of new therapeutics, improve diagnostic approaches, and enhance our understanding of the disease mechanisms.
+
+I encourage other scientists to use and adapt this pipeline, and to contribute additional insights that may help overcome current limitations in marker-based cell annotation.
+
+## Technical Notes
+
+- All notebooks, except the one associated to my contribution (`04_sc_clustering_test.ipynb`), in `scr/` are intended to be run sequentially, with each stage building on the results of the previous one. 
+
+- Python environment and dependencies are specified in the project configuration
+
+- Outputs from each notebook stage are saved for downstream analysis
+
+---
+
+**Original Study Reference**: <https://github.com/taimcnugget/endometriosis-spatial-immune-atlas>
+
+**Entero Glia Cells Reference**: <https://doi.org/10.1186/s12905-024-03480-7>
