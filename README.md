@@ -85,7 +85,7 @@ The codebase is flexible and allows for:
 
 This reproducible workflow demonstrates the applicability of spatial transcriptomics and immunosenescence profiling to endometriosis research. Analysis of endometriosis samples using this pipeline can provide insights to accelerate the development of new therapeutics, improve diagnostic approaches, and enhance our understanding of the disease mechanisms.
 
-I encourage other scientists to use and adapt this pipeline, and to contribute additional insights that may help overcome current limitations in marker-based cell annotation.
+I encourage other scientists to use and adapt this pipeline, explore other tissue sections, and to contribute additional insights that may help overcome current limitations in marker-based cell annotation.
 
 ## Technical Notes
 
